@@ -3,12 +3,12 @@ import React from "react";
 import bin from "../../icons/bin.svg";
 import edit from "../../icons/edit.svg";
 
-const Category = () => {
+const DeliveryZones = () => {
   return (
     <div class="app-wrapper">
       <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
-          <h1 class="app-page-title">Category</h1>
+          <h1 class="app-page-title">DeliveryZones</h1>
           {/*  */}
           <div class="card">
             <div className="row">
@@ -42,4 +42,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default DeliveryZones;

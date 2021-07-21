@@ -183,8 +183,8 @@ const Header = () => {
                         <div class="col-auto">
                           <img
                             class="profile-image"
-                            src="assets/images/profiles/profile-2.png"
-                            alt=""
+                            src={logo}
+                            alt="logo"
                           />
                         </div>
                         <div class="col">
@@ -238,7 +238,7 @@ const Header = () => {
                   role="button"
                   aria-expanded="false"
                 >
-                  <img src="assets/images/user.png" alt="user profile" />
+                  <img src={logo} alt="user profile" />
                 </a>
                 <ul
                   class="dropdown-menu"

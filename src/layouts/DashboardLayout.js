@@ -21,9 +21,10 @@ const DashboardLayoutRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(matchProps) => (
-        <DashboardLayout>
+        <>
+          <DashboardLayout />
           <Component {...matchProps} />
-        </DashboardLayout>
+        </>
       )}
     />
   );

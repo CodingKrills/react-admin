@@ -8,9 +8,10 @@ const LoginLayoutRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(matchProps) => (
-        <LoginLayout>
+        <>
+          <LoginLayout />
           <Component {...matchProps} />
-        </LoginLayout>
+        </>
       )}
     />
   );

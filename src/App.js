@@ -17,6 +17,7 @@ import Order from "./pages/orders/Order";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Category from "./pages/category/Category";
 import AddProduct from "./pages/products/AddProduct";
+import DeliveryZones from "./pages/delivery_zones/DeliveryZones";
 
 const App = () => {
   return (
@@ -41,6 +42,11 @@ const App = () => {
         <DashboardLayoutRoute
           path="/dashboard/category"
           component={Category}
+          exact
+        />
+        <DashboardLayoutRoute
+          path="/dashboard/delivery_zones"
+          component={DeliveryZones}
           exact
         />
       </Switch>
