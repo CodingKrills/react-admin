@@ -85,3 +85,6 @@
 .app-content{
   margin-top: 5%;
 }
+.app-page-title{
+  text-transform: uppercase;
+}
