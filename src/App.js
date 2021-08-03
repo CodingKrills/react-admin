@@ -11,7 +11,7 @@ import LoginLayoutRoute from "./layouts/LoginLayout";
 import DashboardLayoutRoute from "./layouts/DashboardLayout";
 
 // * Pages
-import login from "./pages/login/login";
+import Signin from "./pages/signin/Signin";
 import Product from "./pages/products/Product";
 import Order from "./pages/orders/Order";
 import Dashboard from "./pages/dashboard/Dashboard";
@@ -26,7 +26,7 @@ const App = () => {
         <Route exact path="/">
           <Redirect to="/login" />
         </Route>
-        <LoginLayoutRoute path="/login" component={login} exact />
+        <LoginLayoutRoute path="/login" component={Signin} exact />
         <DashboardLayoutRoute path="/dashboard" component={Dashboard} exact />
         <DashboardLayoutRoute
           path="/dashboard/products"
