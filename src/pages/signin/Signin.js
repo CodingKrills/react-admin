@@ -4,11 +4,21 @@ import { useDispatch, useSelector } from "react-redux";
 
 import logo from "../../assets/app-logo.svg";
 
-const Signin = () => {
+const Signin = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
+
+  useEffect(() => {
+    console.log("user Info ==> ",userInfo)
+    if (userInfo) {
+      history.push("/dashboard");
+    }
+  }, [history, userInfo]);
 
   const submitHandler = (e) => {
     e.preventDefault();

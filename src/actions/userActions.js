@@ -41,22 +41,23 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:5000/api/client_user_login_email_password",
+      "http://localhost:8080/api/administrator_login",
       {
-        email: "emmail@email.com",
-        password: "24df",
+        administrator_email: email,
+        administrator_password: password,
       },
       config
     );
 
-    console.log("DATA ===> ", data);
+    console.log("DATA ===> ", data.response);
 
     dispatch({
       type: USER_LOGIN_SUCCESS,
       payload: data,
     });
 
-    localStorage.setItem("userInfo", JSON.stringify(data));
+    localStorage.setItem("userInfo", JSON.stringify(data.response));
+    localStorage.setItem("jwt_token", JSON.stringify(data.token));
   } catch (error) {
     console.log(error);
     dispatch({
@@ -67,4 +68,11 @@ export const login = (email, password) => async (dispatch) => {
           : error.message,
     });
   }
+};
+
+export const logout = () => (dispatch) => {
+  localStorage.removeItem("userInfo");
+  localStorage.removeItem("cartItems");
+  dispatch({ type: USER_LOGOUT });
+  document.location.href = "/login";
 };

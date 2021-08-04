@@ -1,8 +1,19 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../actions/userActions";
 
 import logo from "../../assets/app-logo.svg";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
+
   return (
     <div class="app-header-inner">
       <div class="container-fluid py-2">
@@ -181,11 +192,7 @@ const Header = () => {
                     <div class="item p-3">
                       <div class="row gx-2 justify-content-between align-items-center">
                         <div class="col-auto">
-                          <img
-                            class="profile-image"
-                            src={logo}
-                            alt="logo"
-                          />
+                          <img class="profile-image" src={logo} alt="logo" />
                         </div>
                         <div class="col">
                           <div class="info">
@@ -258,9 +265,9 @@ const Header = () => {
                     <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <a class="dropdown-item" href="login.html">
+                    <button class="dropdown-item" href="login.html" onClick={logoutHandler}>
                       Log Out
-                    </a>
+                    </button>
                   </li>
                 </ul>
               </div>
