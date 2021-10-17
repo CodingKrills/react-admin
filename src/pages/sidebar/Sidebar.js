@@ -92,7 +92,7 @@ const Sidebar = () => {
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/dashboard/category" class="nav-link">
+              <Link to="/dashboard/users" class="nav-link">
                 <span class="nav-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
